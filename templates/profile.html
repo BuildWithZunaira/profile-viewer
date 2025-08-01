@@ -1,0 +1,103 @@
+<title>User Profile</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background: linear-gradient(to right, #7f53ac, #647dee);
+            color: #333;
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        section {
+            background-color: #fff;
+            border-radius: 20px;
+            padding: 40px 30px 60px;
+            max-width: 350px;
+            margin: auto;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            position: absolute;
+            top: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        h2 {
+            margin-top: 70px;
+            font-size: 24px;
+            color: #2d1e55;
+        }
+
+        small {
+            color: #888;
+            font-size: 14px;
+        }
+
+        p {
+            font-size: 16px;
+            margin-top: 20px;
+            margin-bottom: 5px;
+        }
+
+        fieldset {
+            margin-top: 30px;
+            border: none;
+            display: flex;
+            justify-content: space-around;
+            padding: 0;
+        }
+
+        legend {
+            display: none;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            font-size: 18px;
+            color: #5d3b99;
+        }
+
+        span {
+            font-size: 13px;
+            color: #777;
+        }
+
+        a {
+            margin-top: 30px;
+            display: inline-block;
+            background-color: #7f3fbf;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    {% if user %}
+    <section>
+        <h2>{{ user.name }}</h2>
+        <p><strong>Age:</strong> {{ user.age }}</p>
+        <p><strong>Email:</strong> {{ user.email }}</p>
+        <a href="/user/">Go Back</a>
+    </section>
+    {% else %}
+        <p>User not found.</p>
+        <a href="/user/">Go Back</a>
+    {% endif %}
+
+</body>
+</html>

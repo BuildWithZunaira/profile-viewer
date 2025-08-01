@@ -1,0 +1,75 @@
+<head>
+    <title>User Search</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #8442cf,#7f53ac, #647dee);
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 60px;
+            color: #2c2c54;
+        }
+
+        h2 {
+            color: #ffffff;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        form {
+            margin: 30px auto;
+            padding: 20px;
+            max-width: 400px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+
+        select,
+        input[type="number"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #bbb;
+            border-radius: 6px;
+            width: 80%;
+            margin-top: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #7f3fbf;
+            color: #ffffff;
+            font-size: 16px;
+            border:none;
+            border-radius: 6px;
+            margin-top: 15px;
+        }
+
+        hr {
+            margin: 60px auto;
+            border: 1px solid #d3b6f1;
+            width: 60%;
+        }
+    </style>
+</head>
+<body>
+    <h2>Search by Username</h2>
+    <form method="POST">
+        <select name="username">
+            {% for username in usernames %}
+                <option value="{{ username }}">{{ username|capitalize }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <button type="submit">View Profile</button>
+    </form>
+
+    <hr>
+
+    <h2>Search by Maximum Age</h2>
+    <form method="POST">
+        <input type="number" name="max_age" placeholder="Enter max age">
+        <br>
+        <button type="submit">Show Users</button>
+    </form>
+</body>
+</html>

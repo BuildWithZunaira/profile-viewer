@@ -1,0 +1,72 @@
+<title>User Search Result</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #7f53ac, #647dee);
+            font-family: Arial, sans-serif;
+            color: #2c2c54;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #ffffff;
+            margin-bottom: 40px;
+        }
+
+        fieldset {
+            border: 2px solid #7f3fbf;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 400px;
+            background-color: white;
+            text-align: left;
+        }
+
+        /* legend {
+            font-weight: bold;
+            color: #000000;
+            font-size: 18px;
+            padding: 0 10px;
+        } */
+
+        p {
+            margin: 8px 0;
+            font-size: 16px;
+        }
+
+        strong {
+            color: #5a1ca0;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 30px;
+            background-color: #7f3fbf;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 16px;
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>Users with Age {{ max_age }} or Below</h2>
+
+    {% for user in users %}
+        <fieldset>
+            <p><strong>Name:</strong> {{ user.name }}</p>
+            <p><strong>Age:</strong> {{ user.age }}</p>
+            <p><strong>Email:</strong> {{ user.email }}</p>
+        </fieldset>
+    {% else %}
+        <p>No users found under age {{ max_age }}.</p>
+    {% endfor %}
+
+    <a href="/user/">Go Back</a>
+</body>
+</html>
+
+
