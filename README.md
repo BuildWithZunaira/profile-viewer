@@ -1,26 +1,2 @@
 # profile-viewer(Flask App)
-This is a simple Flask web app that lets you:
-
-Search user profiles by name
-
-Filter users by maximum age
-
-It uses:
-
-Flask (Python)
-
-HTML & CSS for the frontend
-
-Hardcoded user data in Python
-
-Jinja2 templating for dynamic pages
-
-Pages included:
-
-main.html – Welcome page
-
-index_combined.html – Search form
-
-profile.html – Single user profile
-
-profile_age.html – Filtered results by age
+This is a simple Flask web application that allows users to search for profiles by selecting a username or by entering a maximum age to filter results. It uses Python with Flask for backend routing and logic, HTML and CSS for the frontend design, and Jinja2 templating to render dynamic user data. The user information is hardcoded in a dictionary, and different HTML templates are used to display individual profiles and filtered lists based on age.
